@@ -39,6 +39,7 @@ class Course(models.Model):
 	prerequisites_course = models.TextField('Pre-requisitos', max_length=300, 
 		null=True, blank=True)
 	content = models.ForeignKey('Lectura',on_delete=models.CASCADE, null=True)
+	docente = models.ForeignKey('Docente',on_delete=models.CASCADE, null=True)
 	course_document = models.FileField('Documento del curso', upload_to='cursos/',
 		blank=True, null=True, 
 		help_text='Documento describiendo el contenido del curso/publicidad.')
